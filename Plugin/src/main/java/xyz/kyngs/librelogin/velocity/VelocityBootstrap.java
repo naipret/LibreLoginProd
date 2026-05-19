@@ -32,7 +32,7 @@ import xyz.kyngs.librelogin.api.provider.LibreLoginProvider;
         name = "LibreLogin",
         version = "@version@",
         // TODO: Update authors
-        authors = "sapphirecode",
+        authors = {"vuxeim", "sapphirecode"},
         dependencies = {
             @Dependency(id = "floodgate", optional = true),
             @Dependency(id = "luckperms", optional = true),
