@@ -209,7 +209,13 @@ public class PaperListeners extends AuthenticListeners<PaperLibreLogin, Player, 
                 spawnLocationCache.put(puuid, eventSpawnLocation);
             }
 
-            var loc = world.value().getSpawnLocation();
+            Location loc;
+            if (world.key() && eventSpawnLocation.getWorld().equals(world.value())) {
+                loc = eventSpawnLocation;
+            } else {
+                loc = world.value().getSpawnLocation();
+            }
+
             joinedWhileDead.put(puuid, loc);
             event.setSpawnLocation(loc);
         }
