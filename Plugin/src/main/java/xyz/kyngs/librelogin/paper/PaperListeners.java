@@ -92,9 +92,9 @@ public class PaperListeners extends AuthenticListeners<PaperLibreLogin, Player, 
 
         readOnlyUserCache = Caffeine.newBuilder().expireAfterWrite(2, TimeUnit.MINUTES).build();
 
-        spawnLocationCache = Caffeine.newBuilder().expireAfterWrite(2, TimeUnit.MINUTES).build();
+        spawnLocationCache = Caffeine.newBuilder().expireAfterWrite(1, TimeUnit.HOURS).build();
 
-        joinedWhileDead = Caffeine.newBuilder().expireAfterWrite(2, TimeUnit.MINUTES).build();
+        joinedWhileDead = Caffeine.newBuilder().expireAfterWrite(1, TimeUnit.HOURS).build();
     }
 
     public Cache<UUID, Location> getSpawnLocationCache() {
